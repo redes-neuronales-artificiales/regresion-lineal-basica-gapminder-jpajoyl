@@ -8,6 +8,7 @@ En este laboratio se construirá un modelo de regresión lineal univariado.
 import numpy as np
 import pandas as pd
 
+
 def pregunta_01():
     """
     En este punto se realiza la lectura de conjuntos de datos.
@@ -75,11 +76,11 @@ def pregunta_03():
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility = df["fertility"].values
-    X_fertility = X_fertility.reshape(X_fertility.shape[0],1)
+    X_fertility = X_fertility.reshape(X_fertility.shape[0], 1)
 
     # Asigne a la variable los valores de la columna `life`
     y_life = df["life"].values
-    y_life = y_life.reshape(y_life.shape[0],1)
+    y_life = y_life.reshape(y_life.shape[0], 1)
 
     # Importe LinearRegression
     from sklearn.linear_model import LinearRegression
@@ -92,7 +93,7 @@ def pregunta_03():
     prediction_space = np.linspace(
         max(X_fertility),
         min(X_fertility),
-    ).reshape(X_fertility.shape[0], 1)
+    ).reshape(-1, 1)
 
     # Entrene el modelo usando X_fertility y y_life
     reg.fit(X_fertility, y_life)
@@ -122,11 +123,11 @@ def pregunta_04():
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility = df["fertility"].values
-    X_fertility = X_fertility.reshape(X_fertility.shape[0],1)
+    X_fertility = X_fertility.reshape(X_fertility.shape[0], 1)
 
     # Asigne a la variable los valores de la columna `life`
     y_life = df["life"].values
-    y_life = y_life.reshape(y_life.shape[0],1)
+    y_life = y_life.reshape(y_life.shape[0], 1)
 
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 53. El tamaño de la muestra de entrenamiento es del 80%
